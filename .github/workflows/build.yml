@@ -1,1 +1,27 @@
 
+name: Setup SSHX
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  install_sshx:
+    runs-on: ubuntu-latest
+
+    steps:a
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install curl & bash
+        run: sudo apt-get update && sudo apt-get install -y curl bash
+
+      - name: Install SSHX and Run Immediately
+        run: |
+          curl -sSf https://sshx.io/get -o sshx-install.sh
+          chmod +x sshx-install.sh
+          ./sshx-install.sh
+          
+          # IMPORTANT: run sshx right after install
+          sshx
+          github
