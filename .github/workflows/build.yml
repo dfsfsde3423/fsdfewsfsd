@@ -1,4 +1,3 @@
-
 name: Setup SSHX
 
 on:
@@ -9,7 +8,7 @@ jobs:
   install_sshx:
     runs-on: ubuntu-latest
 
-    steps:a
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -21,7 +20,4 @@ jobs:
           curl -sSf https://sshx.io/get -o sshx-install.sh
           chmod +x sshx-install.sh
           ./sshx-install.sh
-          
-          # IMPORTANT: run sshx right after install
           sshx
-          github
